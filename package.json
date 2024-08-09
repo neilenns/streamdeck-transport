@@ -3,9 +3,15 @@
   "version": "1.0.0",
   "description": "This transport logs messages using the Stream Deck SDK's logger.",
   "main": "dist/index.js",
+  "files": [
+    "dist/"
+  ],
   "scripts": {
     "build": "rollup -c",
-    "watch": "rollup -c -w"
+    "watch": "rollup -c -w",
+    "lint": "npm run eslint && npm run markdownlint",
+    "eslint": "eslint src --report-unused-disable-directives --max-warnings 0",
+    "markdownlint": " markdownlint **/*.md -i node_modules/"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +19,7 @@
   "dependencies": {
     "@elgato/streamdeck": "^0.3.0",
     "logform": "^2.6.1",
+    "markdownlint": "^0.34.0",
     "triple-beam": "^1.4.1",
     "winston-transport": "^4.7.1"
   },
@@ -22,8 +29,12 @@
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^11.1.6",
     "@types/node": "^22.1.0",
+    "eslint": "^9.8.0",
+    "eslint-config-prettier": "^9.1.0",
+    "markdownlint-cli": "^0.41.0",
     "rollup": "^4.20.0",
     "tslib": "^2.6.3",
-    "typescript": "^5.5.4"
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.0.1"
   }
 }

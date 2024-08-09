@@ -14,7 +14,8 @@ const Logger = winston.createLogger({
 });
 ```
 
-The maximum log level to log can be configured using the `level` property in the constructor options:
+The maximum log level to log can be configured using the `level`
+property in the constructor options:
 
 ```typescript
     new StreamdeckTransport({ scope: "my-plugin-name", level: "info" }),
