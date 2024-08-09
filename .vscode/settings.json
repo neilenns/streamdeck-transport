@@ -1,0 +1,13 @@
+{
+  "editor.insertSpaces": false,
+  /* Explorer */
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, rollup.config.mjs, tsconfig.json",
+    "eslint.config.mjs": ".markdownlint.jsonc",
+    "README.md": "LICENSE"
+  },
+  "files.exclude": {
+    "node_modules": true
+  }
+}
