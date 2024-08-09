@@ -29,7 +29,7 @@ jobs:
         run: npm run lint
 
       - name: Pack
-        run: npm run pack
+        run: npm pack
 
       - name: Upload package
         uses: softprops/action-gh-release@v2
