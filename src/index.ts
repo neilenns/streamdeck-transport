@@ -11,7 +11,6 @@ type StreamdeckTransportOptions = Transport.TransportStreamOptions & {
    * Sets the logging scope for the Streamdeck logger.
    */
   scope?: string;
-  index?: number;
 };
 
 /**
@@ -44,7 +43,7 @@ class StreamdeckTransport extends Transport {
     super(opts);
 
     this.logger = streamDeck.logger.createScope(opts?.scope ?? "");
-    this.logger.setLevel(stringToLogLevel(opts?.level ?? "INFO"));
+    this.logger.setLevel(stringToLogLevel(opts?.level ?? "DEBUG"));
   }
 
   /**
@@ -54,11 +53,10 @@ class StreamdeckTransport extends Transport {
    */
   log(info: TransformableInfo, callback: () => void) {
     const json = JSON.stringify(info);
-    const winstonLevel = info[LEVEL];
+    const messageLevel = info[LEVEL];
 
-    switch (winstonLevel) {
+    switch (messageLevel) {
       case "debug":
-      case "trace":
         this.logger.debug(json);
         break;
       case "error":
@@ -66,6 +64,9 @@ class StreamdeckTransport extends Transport {
         break;
       case "info":
         this.logger.info(json);
+        break;
+      case "trace":
+        this.logger.trace(json);
         break;
       case "warn":
         this.logger.warn(json);
