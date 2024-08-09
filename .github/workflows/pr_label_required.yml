@@ -10,6 +10,9 @@ jobs:
   label:
     name: "Require label"
     runs-on: windows-latest
+    permissions:
+      issues: write
+      pull-requests: write
 
     steps:
       - name: Verify labels
