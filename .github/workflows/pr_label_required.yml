@@ -18,7 +18,7 @@ jobs:
       - name: Verify labels
         uses: mheap/github-action-required-labels@v5
         with:
-          mode: exactly
+          mode: minimum
           count: 1
           add_comment: true
           labels: |
