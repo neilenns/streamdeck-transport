@@ -31,7 +31,7 @@ jobs:
         run: npm run lint
 
       - name: Pack
-        uses: npm run pack
+        run: npm run pack
 
       - name: Save packaged plugin
         uses: actions/upload-artifact@v4
