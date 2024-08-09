@@ -14,9 +14,9 @@ const Logger = winston.createLogger({
 });
 ```
 
-The maximum log level to log can be configured using the `level`
-property in the constructor options:
+The following options are supported:
 
-```typescript
-    new StreamdeckTransport({ scope: "my-plugin-name", level: "info" }),
-```
+| Option | Details                                                                                                                                                           | Required |
+| ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| level  | Sets the log level for the transport, to further limit log messages beyond the Winston log level. Valid values are `ERROR`, `WARN`, `DEBUG`, `INFO`, and `TRACE`. | No       |
+| scope  | Specifies the custom scope for the log messages.                                                                                                                  | No       |
