@@ -10,12 +10,15 @@ jobs:
   label:
     name: "Require label"
     runs-on: windows-latest
+    permissions:
+      issues: write
+      pull-requests: write
 
     steps:
       - name: Verify labels
         uses: mheap/github-action-required-labels@v5
         with:
-          mode: exactly
+          mode: minimum
           count: 1
           add_comment: true
           labels: |
