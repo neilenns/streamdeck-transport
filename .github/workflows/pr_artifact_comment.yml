@@ -8,6 +8,8 @@ jobs:
   artifacts-url-comments:
     name: Add artifact links to pull request
     runs-on: windows-latest
+    permissions:
+      pull-requests: write
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - uses: tonyhallett/artifacts-url-comments@v1.1.0
