@@ -1,7 +1,7 @@
-import Transport from 'winston-transport';
-import streamDeck, { LogLevel } from '@elgato/streamdeck';
-import { LEVEL } from 'triple-beam';
-import { TransformableInfo } from 'logform';
+import streamDeck, { LogLevel } from "@elgato/streamdeck";
+import { TransformableInfo } from "logform";
+import { LEVEL } from "triple-beam";
+import Transport from "winston-transport";
 
 /**
  * Options for the Streamdeck transport.
@@ -42,8 +42,8 @@ class StreamdeckTransport extends Transport {
   constructor(opts?: StreamdeckTransportOptions) {
     super(opts);
 
-    this.logger = streamDeck.logger.createScope(opts?.scope ?? '');
-    this.logger.setLevel(stringToLogLevel(opts?.level ?? 'INFO'));
+    this.logger = streamDeck.logger.createScope(opts?.scope ?? "");
+    this.logger.setLevel(stringToLogLevel(opts?.level ?? "INFO"));
   }
 
   /**
@@ -56,17 +56,17 @@ class StreamdeckTransport extends Transport {
     const winstonLevel = info[LEVEL];
 
     switch (winstonLevel) {
-      case 'debug':
-      case 'trace':
+      case "debug":
+      case "trace":
         this.logger.debug(json);
         break;
-      case 'error':
+      case "error":
         this.logger.error(json);
         break;
-      case 'info':
+      case "info":
         this.logger.info(json);
         break;
-      case 'warn':
+      case "warn":
         this.logger.warn(json);
         break;
       default:
