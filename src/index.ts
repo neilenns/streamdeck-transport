@@ -11,6 +11,7 @@ type StreamdeckTransportOptions = Transport.TransportStreamOptions & {
    * Sets the logging scope for the Streamdeck logger.
    */
   scope?: string;
+  index?: number;
 };
 
 /**
