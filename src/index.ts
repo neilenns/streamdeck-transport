@@ -43,7 +43,7 @@ class StreamdeckTransport extends Transport {
     super(opts);
 
     this.logger = streamDeck.logger.createScope(opts?.scope ?? "");
-    this.logger.setLevel(stringToLogLevel(opts?.level ?? "DEBUG"));
+    this.logger.setLevel(stringToLogLevel(opts?.level ?? "TRACE"));
   }
 
   /**
