@@ -1,6 +1,6 @@
 import streamDeck, { LogLevel } from "@elgato/streamdeck";
 import { TransformableInfo } from "logform";
-import { LEVEL } from "triple-beam";
+import { LEVEL, MESSAGE } from "triple-beam";
 import Transport from "winston-transport";
 
 /**
@@ -52,27 +52,26 @@ class StreamdeckTransport extends Transport {
    * @param callback The next function to call
    */
   log(info: TransformableInfo, callback: () => void) {
-    const json = JSON.stringify(info);
-    const messageLevel = info[LEVEL];
+    const message = info[MESSAGE] as string;
 
-    switch (messageLevel) {
+    switch (info[LEVEL]) {
       case "debug":
-        this.logger.debug(json);
+        this.logger.debug(message);
         break;
       case "error":
-        this.logger.error(json);
+        this.logger.error(message);
         break;
       case "info":
-        this.logger.info(json);
+        this.logger.info(message);
         break;
       case "trace":
-        this.logger.trace(json);
+        this.logger.trace(message);
         break;
       case "warn":
-        this.logger.warn(json);
+        this.logger.warn(message);
         break;
       default:
-        this.logger.info(json);
+        this.logger.info(message);
         break;
     }
 
