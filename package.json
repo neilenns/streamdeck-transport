@@ -1,6 +1,6 @@
 {
   "name": "streamdeck-transport",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "This transport logs messages using the Stream Deck SDK's logger.",
   "main": "dist/index.js",
   "files": [
