@@ -4,19 +4,19 @@ import { LEVEL, MESSAGE } from "triple-beam";
 import Transport from "winston-transport";
 
 /**
- * Options for the Streamdeck transport.
+ * Options for the Stream Deck transport.
  */
 type StreamdeckTransportOptions = Transport.TransportStreamOptions & {
   /**
-   * Sets the logging scope for the Streamdeck logger.
+   * Sets the logging scope for the Stream Deck logger.
    */
   scope?: string;
 };
 
 /**
- * Converts a Winston log level to a Streamdeck LogLevel.
+ * Converts a Winston log level to a Stream Deck LogLevel.
  * @param level The Winston log level
- * @returns The Streamdeck LogLevel, or LogLevel.INFO if the Winston log level couldn't be mapped
+ * @returns The Stream Deck LogLevel, or LogLevel.INFO if the Winston log level couldn't be mapped
  */
 function stringToLogLevel(level: string): LogLevel {
   // Convert the string to uppercase and check if it matches an enum key
@@ -30,13 +30,13 @@ function stringToLogLevel(level: string): LogLevel {
 }
 
 /**
- * Logs Winston messages using the Streamdeck logger.
+ * Logs Winston messages using the Stream Deck logger.
  */
 class StreamdeckTransport extends Transport {
   private logger: ReturnType<typeof streamDeck.logger.createScope>;
 
   /**
-   * Creates a new Streamdeck transport with the specified scope and Winston log level.
+   * Creates a new Stream Deck transport with the specified scope and Winston log level.
    * @param opts The options for the transport
    */
   constructor(opts?: StreamdeckTransportOptions) {
@@ -47,7 +47,7 @@ class StreamdeckTransport extends Transport {
   }
 
   /**
-   * Logs the info to the Streamdeck logger.
+   * Logs the info to the Stream Deck logger.
    * @param info The info to log
    * @param callback The next function to call
    */
