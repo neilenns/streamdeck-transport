@@ -22,6 +22,12 @@
       "matchPackageNames": ["eslint-plugin{/,}**"]
     },
     {
+      "groupName": "markdownlint",
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true,
+      "matchPackageNames": ["markdownlint{/,}**"]
+    },
+    {
       "groupName": "all minor and patch dependencies",
       "groupSlug": "all-minor-patch",
       "matchUpdateTypes": ["minor", "patch"],
