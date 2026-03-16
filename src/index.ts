@@ -1,4 +1,4 @@
-import streamDeck, { LogLevel } from "@elgato/streamdeck";
+import streamDeck from "@elgato/streamdeck";
 import { TransformableInfo } from "logform";
 import { LEVEL, MESSAGE } from "triple-beam";
 import Transport from "winston-transport";
@@ -13,20 +13,18 @@ type StreamdeckTransportOptions = Transport.TransportStreamOptions & {
   scope?: string;
 };
 
+type LogLevel = NonNullable<Parameters<typeof streamDeck.logger.setLevel>[0]>;
+
+const validLogLevels: LogLevel[] = ["error", "warn", "info", "debug", "trace"];
+
 /**
  * Converts a Winston log level to a Stream Deck LogLevel.
  * @param level The Winston log level
- * @returns The Stream Deck LogLevel, or LogLevel.INFO if the Winston log level couldn't be mapped
+ * @returns The Stream Deck LogLevel, or "info" if the Winston log level couldn't be mapped
  */
 function stringToLogLevel(level: string): LogLevel {
-  // Convert the string to uppercase and check if it matches an enum key
-  const upperCaseLevel = level.toUpperCase();
-  // Use bracket notation to access enum value
-  if (upperCaseLevel in LogLevel) {
-    return LogLevel[upperCaseLevel as keyof typeof LogLevel];
-  } else {
-    return LogLevel.INFO; // Default to INFO
-  }
+  const lowerCaseLevel = level.toLowerCase() as LogLevel;
+  return validLogLevels.includes(lowerCaseLevel) ? lowerCaseLevel : "info";
 }
 
 /**
