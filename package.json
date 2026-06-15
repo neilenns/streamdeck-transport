@@ -19,7 +19,7 @@
   "dependencies": {
     "@elgato/streamdeck": "^2.0.0",
     "logform": "^2.6.1",
-    "markdownlint": "^0.40.0",
+    "markdownlint": "^0.41.0",
     "triple-beam": "^1.4.1",
     "winston-transport": "^4.7.1"
   },
