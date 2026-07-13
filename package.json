@@ -34,7 +34,7 @@
     "markdownlint-cli": "^0.49.0",
     "rollup": "^4.20.0",
     "tslib": "^2.6.3",
-    "typescript": "^5.5.4",
+    "typescript": "^7.0.0",
     "typescript-eslint": "^8.0.1"
   }
 }
