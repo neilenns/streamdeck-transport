@@ -4,7 +4,7 @@
   "description": "This transport logs messages using the Stream Deck SDK's logger.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/neilenns/streamdeck-transport"
+    "url": "git+https://github.com/neilenns/streamdeck-transport"
   },
   "main": "dist/index.js",
   "files": [
