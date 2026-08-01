@@ -31,6 +31,9 @@ jobs:
       - name: Pack
         run: npm pack
 
+      - name: Publish
+        run: npm publish
+
       - name: Upload package
         uses: softprops/action-gh-release@v3
         env:
