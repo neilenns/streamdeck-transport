@@ -1,6 +1,6 @@
 {
   "name": "streamdeck-transport",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "This transport logs messages using the Stream Deck SDK's logger.",
   "repository": {
     "type": "git",
