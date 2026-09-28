@@ -21,7 +21,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@elgato/streamdeck": "^2.0.0",
+    "@elgato/streamdeck": "^3.0.0",
     "logform": "^2.6.1",
     "markdownlint": "^0.41.0",
     "triple-beam": "^1.4.1",
